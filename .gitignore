@@ -35,3 +35,9 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+# ignore webpack compiler outputs
+webpack.records
+
+# ignore the output directories for each project
+output/
