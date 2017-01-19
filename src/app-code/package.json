@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "scripts": {
     "build": "webpack",
-    "deploy": "./node_modules/.bin/cpx node_modules/vendor-bundle/output/*.* output"
+    "deploy": "cpx node_modules/vendor-code/output/*.* output && cpx node_modules/component-code/output/*.* output"
   },
   "dependencies": {
     "vendor-code": "../vendor-code",
+    "component-code": "../component-code",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },

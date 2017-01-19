@@ -1,23 +1,24 @@
 var path = require('path');
 var webpack = require('webpack');
 var platform = require('vendor-code');
-var components = require('component-code');
 
 module.exports = {
   entry: {
-    app: './index.js'
+    components: ['./components/Button.js']
   },
   output: {
-    filename: './output/app.js'
+    library: '[name]_[hash]',
+    libraryTarget: 'var',
+    filename: './output/[name]_[hash].js'
   },
   recordsPath: path.resolve(__dirname, './webpack.records'),
   plugins: [
     new webpack.DllReferencePlugin({
       manifest: require(platform.manifest)
     }),
-    new webpack.DllReferencePlugin({
-      manifest: require(components.manifest),
-      scope: 'ui'
+    new webpack.DllPlugin({
+      path: './output/components.manifest.json',
+      name: "[name]_[hash]",
     })
   ]
 };
