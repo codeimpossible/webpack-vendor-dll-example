@@ -7,9 +7,7 @@
   },
   "dependencies": {
     "vendor-code": "../vendor-code",
-    "component-code": "../component-code",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "component-code": "../component-code"
   },
   "devDependencies": {
     "webpack": "^2.2.0",
